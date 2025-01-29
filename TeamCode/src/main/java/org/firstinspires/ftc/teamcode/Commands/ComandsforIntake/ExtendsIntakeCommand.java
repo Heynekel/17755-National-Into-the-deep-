@@ -20,4 +20,9 @@ public class ExtendsIntakeCommand extends CommandBase {
         m_extensionIntake.Extend();
     }
 
+    @Override
+    public boolean isFinished(){
+        return m_extensionIntake.GetAngle() >= 100;
+    }
+
 }

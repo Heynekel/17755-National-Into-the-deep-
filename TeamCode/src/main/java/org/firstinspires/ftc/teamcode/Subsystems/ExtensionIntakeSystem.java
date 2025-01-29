@@ -20,16 +20,22 @@ public class ExtensionIntakeSystem extends SubsystemBase {
 
         extension1 = new SimpleServo(hardwareMap, "extension1", 0, 180, AngleUnit.DEGREES);
         extension2 = new SimpleServo(hardwareMap, "extension2", 0, 180, AngleUnit.DEGREES);
+        extension1.setInverted(true);
     }
 
     public void Extend(){
-        extension1.turnToAngle(90);
-        extension2.turnToAngle(90);
+        extension1.turnToAngle(100);
+        extension2.turnToAngle(100);
     }
 
     public void Back(){
-        extension2.turnToAngle(0);
-        extension1.turnToAngle(0);
+        extension2.turnToAngle(1);
+        extension1.turnToAngle(1);
+    }
+
+
+    public double GetAngle(){
+        return  extension1.getAngle();
     }
 
 

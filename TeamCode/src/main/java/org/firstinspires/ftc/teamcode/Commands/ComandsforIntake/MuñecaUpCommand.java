@@ -16,5 +16,8 @@ public class MuñecaUpCommand extends CommandBase {
     public void execute() {
   m_inatkeMueñeca.Up();
     }
-
+    @Override
+    public boolean isFinished(){
+        return m_inatkeMueñeca.getAngle() <= 16;
+    }
 }

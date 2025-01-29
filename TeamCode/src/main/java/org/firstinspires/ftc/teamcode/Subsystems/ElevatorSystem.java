@@ -78,14 +78,15 @@ public class ElevatorSystem extends SubsystemBase {
         elevatorright.setPower(power);
     }
 
-    /*@Override
+    @Override
     public  void periodic(){
         telemetry.addData("Elevator right position", elevatorright.getCurrentPosition());
         telemetry.addData("Elevator left position", elevatorleft.getCurrentPosition());
         telemetry.addData("Voltage left elevator motor", elevatorleft.getCurrent(CurrentUnit.MILLIAMPS));
         telemetry.addData("Voltage right elevator motor", elevatorright.getCurrent(CurrentUnit.MILLIAMPS));
+        telemetry.addData("Direction of left elevator", elevatorleft.getDirection());
 
         //telemetry.addData("Elevator left v", brazoizq.isOverCurrent());
         //telemetry.addData("Elevator right v", brazoder.isOverCurrent());
-    }*/
+    }
 }

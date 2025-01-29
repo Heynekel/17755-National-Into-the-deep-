@@ -36,4 +36,9 @@ public void Normal(){
     muñeca1.turnToAngle(63);
 }
 
+public double getAngle(){
+    return muñeca1.getAngle();
 }
+
+}
+

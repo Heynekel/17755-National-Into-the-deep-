@@ -33,24 +33,21 @@ public class TeleOpPrueba extends CommandOpMode {
        m_intake = new Intake(telemetry, hardwareMap);
 
 
- m_prueba.getGamepadButton(GamepadKeys.Button.RIGHT_BUMPER)
-                        .whenPressed(
-                                new SequentialCommandGroup(
-                                        new ParallelCommandGroup(
-                                                new ExtendsIntakeCommand(m_extensionIntake),
-                                                new MuñecaDownCommand(m_muñecaSystem)),
-                                        new WaitCommand(100),
-                                        new TakeCommandIntake(m_intake)
+/* m_prueba.getGamepadButton(GamepadKeys.Button.RIGHT_BUMPER)
+                        .whileHeld(
+                                new ParallelCommandGroup(
+                                       new MuñecaDownCommand(m_muñecaSystem),
+                                        new InstantCommand(()->m_intake.Take(-0.75))
                                 )
                         )
                                 .whenReleased(
                                         new ParallelCommandGroup(
                                         new MuñecaUpCommand(m_muñecaSystem),
                                         new InstantCommand(()->m_intake.Take(0)))
-                                );
+                                );*/
 
         m_prueba.getGamepadButton( GamepadKeys.Button.A)
-                .whenPressed(()-> m_muñecaSystem.Down());
+                .whenPressed(()-> m_extensionIntake.Back());
 
         m_prueba.getGamepadButton( GamepadKeys.Button.B)
                 .whenPressed(()-> m_muñecaSystem.Normal());
@@ -70,7 +67,7 @@ public class TeleOpPrueba extends CommandOpMode {
 
 
         m_prueba.getGamepadButton( GamepadKeys.Button.Y)
-                .whenPressed(()->m_muñecaSystem.Up());
+                .whenPressed(()->m_extensionIntake.Extend());
 
     }
     }

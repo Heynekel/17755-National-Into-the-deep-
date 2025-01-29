@@ -23,13 +23,15 @@ public class Intake extends SubsystemBase {
 
     }
 
-    public void Take(int power){
+    public void Take(double power){
         intake.setPower(power);
     }
 
     public void OutTake(double power){
         intake.setPower(power);
     }
+
+
 
 
 }

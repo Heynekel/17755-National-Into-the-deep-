@@ -20,4 +20,9 @@ addRequirements(m_intakeMuñeca);
       m_intakeMuñeca.Down();
     }
 
+    @Override
+    public boolean isFinished(){
+return m_intakeMuñeca.getAngle() >= 90;
+    }
+
 }

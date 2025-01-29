@@ -20,6 +20,11 @@ public class BackIntakeCoomand extends CommandBase {
        m_extensionIntake.Back();
     }
 
+    @Override
+    public boolean isFinished(){
+        return m_extensionIntake.GetAngle() <= 1;
+    }
+
 }
 
 
