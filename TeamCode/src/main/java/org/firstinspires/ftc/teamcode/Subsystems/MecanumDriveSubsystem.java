@@ -12,7 +12,30 @@ import com.qualcomm.robotcore.hardware.PIDFCoefficients;
 import org.firstinspires.ftc.teamcode.drive.SampleMecanumDrive;
 
 import java.util.List;
-
+/*Steps to do the fiel Centric
+*
+* 1-
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+* */
 public class MecanumDriveSubsystem extends SubsystemBase {
 
     private final SampleMecanumDrive drive;

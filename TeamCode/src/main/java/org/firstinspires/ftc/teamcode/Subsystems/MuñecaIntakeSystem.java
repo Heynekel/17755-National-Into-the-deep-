@@ -18,9 +18,10 @@ public MuñecaIntakeSystem(Telemetry telemetry, HardwareMap hardwareMap){
     this.telemetry = telemetry;
 
     muñeca1 = new SimpleServo(hardwareMap, "muñeca1", 0, 180, AngleUnit.DEGREES);
+muñeca1.setInverted(false);
 
 
-    Up();
+
 }
 
 public void Down(){
@@ -33,7 +34,7 @@ public void  Up(){
 }
 
 public void Normal(){
-    muñeca1.turnToAngle(63);
+    muñeca1.turnToAngle(45);
 }
 
 public double getAngle(){
