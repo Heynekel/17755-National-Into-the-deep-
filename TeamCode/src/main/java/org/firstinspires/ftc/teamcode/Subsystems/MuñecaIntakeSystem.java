@@ -30,7 +30,7 @@ guardar();
     }
 
     public void Down(){
-        muñeca1.turnToAngle(90);
+        muñeca1.turnToAngle(89);
 
     }
 
@@ -44,7 +44,7 @@ guardar();
     }
 
     public void PositionforAutos(){
-        muñeca1.turnToAngle(95);
+        muñeca1.turnToAngle(88);
     }
 
     public void  Up(){
@@ -52,11 +52,15 @@ guardar();
     }
 
     public void Normal(){
-        muñeca1.turnToAngle(70);
+        muñeca1.turnToAngle(67);
     }
 
     public double getAngle(){
         return muñeca1.getAngle();
+    }
+
+    public void SacarAutos(){
+        muñeca1.turnToAngle(80);
     }
 
 

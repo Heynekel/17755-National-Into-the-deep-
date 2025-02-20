@@ -85,6 +85,11 @@ public class TeleOpFieldCentric extends CommandOpMode {
         new InstantCommand(() -> m_intake.Take(0)))
                 );
 
+        m_chasisDriver.getGamepadButton(GamepadKeys.Button.DPAD_DOWN)
+                        .whenPressed(()-> m_escalador.EscaladorOut());
+
+
+
         m_chasisDriver.getGamepadButton(GamepadKeys.Button.LEFT_BUMPER)
                 .whenPressed(new CommandExtend(m_extensionIntake, 6750))
                 .whileHeld(
@@ -96,8 +101,7 @@ public class TeleOpFieldCentric extends CommandOpMode {
                 .whenReleased(
                         new ParallelCommandGroup(
                                 new MuñecaUpCommand(m_muñecaSystem),
-                                new InstantCommand(()-> m_intake.OutTake(0)),
-        new CommandExtend(m_extensionIntake, 100)
+                                new InstantCommand(()-> m_intake.OutTake(0))
 
                         )
                 );
@@ -105,21 +109,37 @@ public class TeleOpFieldCentric extends CommandOpMode {
         /*muñeca*/
 
         m_chasisDriver.getGamepadButton(GamepadKeys.Button.X)
-                .whenPressed(()-> m_muñecaSystem.Normal());
+                .whileHeld(
+                        new SequentialCommandGroup(
+                                new MuñecaNormalCommand(m_muñecaSystem),
+                                new WaitCommand(250),
+                                new InstantCommand(()-> m_intake.OutTake(0.4)))
+                )
+                .whenReleased(
+                        new ParallelCommandGroup(
+                                new MuñecaUpCommand(m_muñecaSystem),
+                                new InstantCommand(()-> m_intake.OutTake(0))
+
+                        )
+                );
 
         /*Extencion del intake*/
 
         m_extensionIntake.setDefaultCommand(new ExtendDefaulCommand(m_extensionIntake, m_chasisDriver));
 
+
         m_chasisDriver.getGamepadButton(GamepadKeys.Button.B)
                 .whenPressed(
-                        new RetractCommand(m_extensionIntake, 100)
+                        new RetractCommand(m_extensionIntake, 250)
                 );
 
-m_chasisDriver.getGamepadButton(GamepadKeys.Button.DPAD_LEFT)
+
+
+m_chasisDriver.getGamepadButton(GamepadKeys.Button.LEFT_STICK_BUTTON)
                 .whenPressed(()-> m_muñecaSystem.sacar());
 
-m_chasisDriver.getGamepadButton(GamepadKeys.Button.DPAD_RIGHT)
+
+m_chasisDriver.getGamepadButton(GamepadKeys.Button.RIGHT_STICK_BUTTON)
                         .whenPressed(()-> m_muñecaSystem.guardar());
 
 
@@ -156,30 +176,29 @@ m_chasisDriver.getGamepadButton(GamepadKeys.Button.DPAD_RIGHT)
                 .whenPressed(
                         new ParallelCommandGroup(
                                 new InstantCommand(()-> m_escalador.EscaladorOut()),
-                                new InstantCommand(()-> m_elevatorSystem.setPosition(2400))
+                                new InstantCommand(()-> m_elevatorSystem.setPosition(2550))
                         )
                 );
+
 
         m_systemasDriver.getGamepadButton(GamepadKeys.Button.X)
                 .whileHeld(()-> m_escalador.EscaladorOut());
 
+
         m_systemasDriver.getGamepadButton(GamepadKeys.Button.RIGHT_BUMPER)
                 .whenPressed(
                         new SequentialCommandGroup(
-                                new InstantCommand(()-> m_elevatorSystem.setPosition(2710)),
+                                new InstantCommand(()-> m_elevatorSystem.setPosition(2750)),
                                 new WaitCommand(750),
                                 new InstantCommand(()-> m_escalador.EscaladorIn()),
                                 new InstantCommand(()-> m_elevatorSystem.setPosition(2300)),
                                 new  WaitCommand(750),
                                 new ParallelCommandGroup(
                                         new InstantCommand(()-> m_elevatorSystem.setPosition(0)),
-                                        new InstantCommand(()-> m_escalador.setPosition(-13800)),
+                                        new InstantCommand(()-> m_escalador.setPosition(-14500)),
                                         new WaitCommand(500),
                                         new RetractCommand(m_extensionIntake, 90)
-
-
                                 )
-
                         )
                 );
 

@@ -19,6 +19,6 @@ public class MuñecaNormalCommand extends CommandBase {
     }
     @Override
     public boolean isFinished(){
-        return m_inatkeMueñeca.getAngle() <= 70;
+        return m_inatkeMueñeca.getAngle() <= 67;
     }
 }
