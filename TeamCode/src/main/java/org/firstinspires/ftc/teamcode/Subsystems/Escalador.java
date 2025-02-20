@@ -30,8 +30,7 @@ public class Escalador extends SubsystemBase {
 
         escalador.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-        servoescalador.setInverted(true);
-
+        servoescalador.setInverted(false);
     }
 
 
@@ -41,11 +40,11 @@ public class Escalador extends SubsystemBase {
 
 
     public void EscaladorOut(){
-        servoescalador.turnToAngle(0);
+        servoescalador.turnToAngle(180);
     }
 
     public void EscaladorIn(){
-        servoescalador.turnToAngle(180);
+        servoescalador.turnToAngle(0);
     }
 
     public void Brake(){

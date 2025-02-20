@@ -1,10 +1,11 @@
-package org.firstinspires.ftc.teamcode.AutonomosThings;
+package org.firstinspires.ftc.teamcode.AutonomosThings.Red.Red;
 
 import com.arcrobotics.ftclib.command.CommandOpMode;
 import com.arcrobotics.ftclib.command.RunCommand;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
 import org.firstinspires.ftc.teamcode.Subsystems.ElevatorSystem;
+import org.firstinspires.ftc.teamcode.Subsystems.Escalador;
 import org.firstinspires.ftc.teamcode.Subsystems.ExtensionIntakeSystem;
 import org.firstinspires.ftc.teamcode.Subsystems.IntakeSystem;
 import org.firstinspires.ftc.teamcode.Subsystems.MecanumDriveSubsystem;
@@ -21,6 +22,7 @@ ExtensionIntakeSystem m_extensionIntakeSystem;
 IntakeSystem m_intakeSystem;
 MuñecaIntakeSystem m_muñecaIntakeSystem;
 ElevatorSystem m_elevatorSystem;
+Escalador m_escalador;
 AutonomosProcesRed autonomosProcesRed;
 
     @Override
@@ -29,6 +31,7 @@ AutonomosProcesRed autonomosProcesRed;
         sampleMecanumDrive = new SampleMecanumDrive(hardwareMap);/*siempre van al incio*/
      m_driveSubsystem = new MecanumDriveSubsystem(sampleMecanumDrive, false, false);
 
+     m_escalador = new Escalador(telemetry, hardwareMap);
      m_extensionIntakeSystem = new ExtensionIntakeSystem(telemetry, hardwareMap);
      m_intakeSystem = new IntakeSystem(telemetry, hardwareMap);
      m_muñecaIntakeSystem = new MuñecaIntakeSystem(telemetry, hardwareMap);
@@ -40,7 +43,7 @@ AutonomosProcesRed autonomosProcesRed;
             telemetry.addData("Position", m_driveSubsystem.getPoseEstimate());
             telemetry.update();
         }));
-        autonomosProcesRed = new AutonomosProcesRed(m_driveSubsystem, m_elevatorSystem, m_extensionIntakeSystem, m_intakeSystem, m_muñecaIntakeSystem);
+        autonomosProcesRed = new AutonomosProcesRed(m_driveSubsystem, m_elevatorSystem, m_extensionIntakeSystem, m_intakeSystem, m_muñecaIntakeSystem,m_escalador);
 schedule(autonomosProcesRed);
 
 
