@@ -13,7 +13,7 @@ import org.firstinspires.ftc.teamcode.Subsystems.MuñecaIntakeSystem;
 import org.firstinspires.ftc.teamcode.drive.SampleMecanumDrive;
 
 @Autonomous(name = "RedEspecimens")
-public class ProbarAutonomo extends CommandOpMode {
+public class AutonomoRed extends CommandOpMode {
 
 
 SampleMecanumDrive sampleMecanumDrive;

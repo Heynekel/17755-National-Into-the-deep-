@@ -31,6 +31,7 @@ public class Escalador extends SubsystemBase {
         escalador.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         servoescalador.setInverted(false);
+
     }
 
 
@@ -39,8 +40,11 @@ public class Escalador extends SubsystemBase {
     }
 
 
+    public void EscaladormoreOut(){
+        servoescalador.turnToAngle(164);
+    }
     public void EscaladorOut(){
-        servoescalador.turnToAngle(180);
+        servoescalador.turnToAngle(154);
     }
 
     public void EscaladorIn(){
@@ -60,6 +64,10 @@ public class Escalador extends SubsystemBase {
         escalador.setMode(DcMotor.RunMode.RUN_TO_POSITION);
     }
 
+
+    public int getPosition(){
+        return  escalador.getCurrentPosition();
+    }
     @Override
     public void periodic(){
         telemetry.addData("escalador", escalador.getCurrentPosition());

@@ -163,12 +163,10 @@ m_chasisDriver.getGamepadButton(GamepadKeys.Button.RIGHT_STICK_BUTTON)
         /*Para escalar*/
 
         m_systemasDriver.getGamepadButton(GamepadKeys.Button.Y)
-                .whileHeld(()-> m_escalador.setPower(1))
-                .whenReleased(()-> m_escalador.setPower(0));
+                .whileHeld(()-> m_escalador.setPosition(m_escalador.getPosition()-500))
+                .whenReleased(()-> m_escalador.setPosition(m_escalador.getPosition()));
 
-        m_systemasDriver.getGamepadButton(GamepadKeys.Button.A)
-                .whileHeld(()-> m_escalador.setPower(-1))
-                .whenReleased(()-> m_escalador.setPower(0));
+
 
 
         m_systemasDriver.getGamepadButton(GamepadKeys.Button.B)
@@ -176,7 +174,7 @@ m_chasisDriver.getGamepadButton(GamepadKeys.Button.RIGHT_STICK_BUTTON)
                 .whenPressed(
                         new ParallelCommandGroup(
                                 new InstantCommand(()-> m_escalador.EscaladorOut()),
-                                new InstantCommand(()-> m_elevatorSystem.setPosition(2550))
+                                new InstantCommand(()-> m_elevatorSystem.setPosition(2450))
                         )
                 );
 
@@ -188,6 +186,7 @@ m_chasisDriver.getGamepadButton(GamepadKeys.Button.RIGHT_STICK_BUTTON)
         m_systemasDriver.getGamepadButton(GamepadKeys.Button.RIGHT_BUMPER)
                 .whenPressed(
                         new SequentialCommandGroup(
+                                new InstantCommand(()-> m_escalador.EscaladormoreOut()),
                                 new InstantCommand(()-> m_elevatorSystem.setPosition(2750)),
                                 new WaitCommand(750),
                                 new InstantCommand(()-> m_escalador.EscaladorIn()),
@@ -195,7 +194,7 @@ m_chasisDriver.getGamepadButton(GamepadKeys.Button.RIGHT_STICK_BUTTON)
                                 new  WaitCommand(750),
                                 new ParallelCommandGroup(
                                         new InstantCommand(()-> m_elevatorSystem.setPosition(0)),
-                                        new InstantCommand(()-> m_escalador.setPosition(-14500)),
+                                        new InstantCommand(()-> m_escalador.setPosition(-15000)),
                                         new WaitCommand(500),
                                         new RetractCommand(m_extensionIntake, 90)
                                 )

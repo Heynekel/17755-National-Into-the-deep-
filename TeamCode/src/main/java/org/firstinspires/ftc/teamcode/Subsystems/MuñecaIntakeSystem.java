@@ -30,7 +30,7 @@ guardar();
     }
 
     public void Down(){
-        muñeca1.turnToAngle(89);
+        muñeca1.turnToAngle(86);
 
     }
 
@@ -44,7 +44,7 @@ guardar();
     }
 
     public void PositionforAutos(){
-        muñeca1.turnToAngle(88);
+        muñeca1.turnToAngle(81);
     }
 
     public void  Up(){

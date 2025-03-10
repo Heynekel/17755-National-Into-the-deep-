@@ -22,7 +22,7 @@ addRequirements(m_intakeMuñeca);
 
     @Override
     public boolean isFinished(){
-return m_intakeMuñeca.getAngle()  <= 89;
+return m_intakeMuñeca.getAngle()  <= 86;
     }
 
 }

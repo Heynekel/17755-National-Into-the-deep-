@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.AutonomosThings.Red.Red;
+package org.firstinspires.ftc.teamcode.AutonomosThings.Red.Blue;
 
 import com.acmerobotics.roadrunner.geometry.Pose2d;
 import com.acmerobotics.roadrunner.geometry.Vector2d;
@@ -6,22 +6,21 @@ import com.acmerobotics.roadrunner.trajectory.Trajectory;
 
 import org.firstinspires.ftc.teamcode.drive.SampleMecanumDrive;
 
-public class RedEspecimensTrajectories {
-
-    public Trajectory Redespecimen1(SampleMecanumDrive drive){
+public class BlueEspecimensTrayectories {
+    public Trajectory Blueespecimen1(SampleMecanumDrive drive){
         Pose2d firstpose = new Pose2d(8.15, -63.05, Math.toRadians(270));
         drive.setPoseEstimate(firstpose);
         return drive.trajectoryBuilder(firstpose)
-                .lineToConstantHeading(new Vector2d(7 ,-25))
+                .lineToConstantHeading(new Vector2d(6 ,-22))
                 .build();
         /*Deja el primer especimen*/
     }
 
-    public  Trajectory Redespecimen2(SampleMecanumDrive drive){
-        return drive.trajectoryBuilder(new Pose2d(7, -33, Math.toRadians(270)))
-                .lineToLinearHeading(new Pose2d(32.5, -38.5, Math.toRadians(33)))
+    public  Trajectory Blueespecimen2(SampleMecanumDrive drive){
+        return drive.trajectoryBuilder(new Pose2d(6, -34, Math.toRadians(270)))
+                .lineToLinearHeading(new Pose2d(33.5, -38.5, Math.toRadians(33)))
                 .build();
-  /*Va a al punto medio*/
+        /*Va a al punto medio*/
     }
 
     public Trajectory girar1(SampleMecanumDrive drive){
@@ -30,23 +29,23 @@ public class RedEspecimensTrajectories {
                 .build();
     }
 
-    public Trajectory Redespecimen3(SampleMecanumDrive drive){
+    public Trajectory Blueespecimen3(SampleMecanumDrive drive){
         return drive.trajectoryBuilder(new Pose2d(40, -50, Math.toRadians(330)))
-                .lineToLinearHeading(new Pose2d(42, -37, Math.toRadians(33)))
+                .lineToLinearHeading(new Pose2d(43, -37, Math.toRadians(33)))
                 .build();
 
     }
 
 
-    public Trajectory Redespecimen4(SampleMecanumDrive drive){
+    public Trajectory Blueespecimen4(SampleMecanumDrive drive){
         return drive.trajectoryBuilder(new Pose2d(45, -37, Math.toRadians(33)))
                 .lineToLinearHeading(new Pose2d(45, -55, Math.toRadians(330)))
                 .build();
 
     }
 
-    public Trajectory Redespecimen5(SampleMecanumDrive drive){
-        return drive.trajectoryBuilder(new Pose2d(45, -55, Math.toRadians(330)))
+    public Trajectory Blueespecimen5(SampleMecanumDrive drive){
+        return drive.trajectoryBuilder(new Pose2d(45, -50, Math.toRadians(330)))
                 .lineToLinearHeading(new Pose2d(41, -49, Math.toRadians(90)))
                 .build();
 
@@ -54,35 +53,34 @@ public class RedEspecimensTrajectories {
 
     public Trajectory estamparse(SampleMecanumDrive drive){
         return drive.trajectoryBuilder(new Pose2d(41, -49, Math.toRadians(90)))
-                .lineToLinearHeading(new Pose2d(41, -66.5, Math.toRadians(90)))
+                .lineToLinearHeading(new Pose2d(41, -66, Math.toRadians(90)))
                 .build();
 
     }
-
 
     public Trajectory estamparse2(SampleMecanumDrive drive){
         return drive.trajectoryBuilder(new Pose2d(41, -49, Math.toRadians(90)))
-                .lineToLinearHeading(new Pose2d(41, -68.5, Math.toRadians(90)))
+                .lineToLinearHeading(new Pose2d(41, -68, Math.toRadians(90)))
                 .build();
 
     }
 
-    public Trajectory RedEspecimen6(SampleMecanumDrive drive){
+    public Trajectory BlueEspecimen6(SampleMecanumDrive drive){
         return drive.trajectoryBuilder(new Pose2d(48, -60, Math.toRadians(90)))
-                .lineToLinearHeading(new Pose2d(-7, -22.5, Math.toRadians(270)))
+                .lineToLinearHeading(new Pose2d(-7, -20, Math.toRadians(270)))
                 .build();
     }
 
-    public Trajectory RedEspecimen7(SampleMecanumDrive drive) {
+    public Trajectory BlueEspecimen7(SampleMecanumDrive drive) {
         return drive.trajectoryBuilder(new Pose2d(0, -40, Math.toRadians(270)))
                 .lineToLinearHeading(new Pose2d(41, -49, Math.toRadians(90)))
                 .build();
 
     }
 
-    public Trajectory RedEspecimen8(SampleMecanumDrive drive) {
+    public Trajectory BlueEspecimen8(SampleMecanumDrive drive) {
         return drive.trajectoryBuilder(new Pose2d(40, -66, Math.toRadians(90)))
-                .lineToLinearHeading(new Pose2d(-3, -21.75, Math.toRadians(270)))
+                .lineToLinearHeading(new Pose2d(-3, -24, Math.toRadians(270)))
                 .build();
     }
 
@@ -90,11 +88,7 @@ public class RedEspecimensTrajectories {
 
 
 
-    }
 
 
 
-
-
-
-
+}
