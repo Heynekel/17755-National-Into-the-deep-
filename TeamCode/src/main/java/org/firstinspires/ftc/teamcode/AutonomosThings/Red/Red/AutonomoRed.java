@@ -12,7 +12,7 @@ import org.firstinspires.ftc.teamcode.Subsystems.MecanumDriveSubsystem;
 import org.firstinspires.ftc.teamcode.Subsystems.MuñecaIntakeSystem;
 import org.firstinspires.ftc.teamcode.drive.SampleMecanumDrive;
 
-@Autonomous(name = "RedEspecimens")
+//@Autonomous(name = "RedEspecimens")
 public class AutonomoRed extends CommandOpMode {
 
 

@@ -145,7 +145,7 @@ m_chasisDriver.getGamepadButton(GamepadKeys.Button.RIGHT_STICK_BUTTON)
 
         /*Driver2*/
 
-        /*elevator*/
+        /*elevator
 
         m_systemasDriver.getGamepadButton( GamepadKeys.Button.DPAD_UP)
                 .whileHeld(()->  m_elevatorSystem.setPosition(2300));
@@ -173,8 +173,8 @@ m_chasisDriver.getGamepadButton(GamepadKeys.Button.RIGHT_STICK_BUTTON)
 
                 .whenPressed(
                         new ParallelCommandGroup(
-                                new InstantCommand(()-> m_escalador.EscaladorOut()),
-                                new InstantCommand(()-> m_elevatorSystem.setPosition(2450))
+                                new InstantCommand(()-> m_escalador.EscaladorOut())
+                               // new InstantCommand(()-> m_elevatorSystem.setPosition(2450))
                         )
                 );
 
@@ -183,7 +183,7 @@ m_chasisDriver.getGamepadButton(GamepadKeys.Button.RIGHT_STICK_BUTTON)
                 .whileHeld(()-> m_escalador.EscaladorOut());
 
 
-        m_systemasDriver.getGamepadButton(GamepadKeys.Button.RIGHT_BUMPER)
+      /*  m_systemasDriver.getGamepadButton(GamepadKeys.Button.RIGHT_BUMPER)
                 .whenPressed(
                         new SequentialCommandGroup(
                                 new InstantCommand(()-> m_escalador.EscaladormoreOut()),
@@ -199,7 +199,7 @@ m_chasisDriver.getGamepadButton(GamepadKeys.Button.RIGHT_STICK_BUTTON)
                                         new RetractCommand(m_extensionIntake, 90)
                                 )
                         )
-                );
+                );*/
 
 
 
@@ -223,6 +223,7 @@ m_chasisDriver.getGamepadButton(GamepadKeys.Button.RIGHT_STICK_BUTTON)
             telemetry.addData("Heading", m_drive.getPoseEstimate().getHeading());
             telemetry.addData("Position", m_drive.getPoseEstimate());
             telemetry.addData("Wheel Velocities", m_drive.getWheelVelocities());
+
             // telemetry.addData("Voltage", m_drive.isOverCurrent());
             telemetry.update();
         }));
